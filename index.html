@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Mamidi's Wedding Invite | Wedding Invitation</title>
+
+  <!-- Browser Theme & Mobile App UI Customization -->
+  <meta name="theme-color" content="#080404">
+  <meta name="color-scheme" content="dark">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Mamidi's Wedding Invite">
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Google Fonts: Cinzel, Cinzel Decorative, Cormorant Garamond, Great Vibes, & Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;500;600;700;800;900&family=Cinzel+Decorative:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Mobile App Frame / Centered Container -->
+  <div class="mobile-viewport">
+
+    <!-- Ambient / Background Layer (holds the blurred start frame, ambient video, and subtle-blurred last frame) -->
+    <div id="ambientContainer" class="ambient-container">
+      <video id="bgVideo" class="bg-video" src="MarriageVideo.mp4" muted playsinline preload="auto"></video>
+      <div id="startBlurLayer" class="start-blur-layer"></div>
+      <div id="endFrameBackdrop" class="end-frame-backdrop"></div>
+      <div class="luxury-overlay"></div>
+
+      <!-- Floating golden sacred sparkles -->
+      <div class="particles" aria-hidden="true">
+        <span class="particle p1"></span>
+        <span class="particle p2"></span>
+        <span class="particle p3"></span>
+        <span class="particle p4"></span>
+        <span class="particle p5"></span>
+        <span class="particle p6"></span>
+      </div>
+    </div>
+
+    <!-- Royal Gold Botanical Border Frame with Veins, Leaves, & Lotus Flowers (z-index below text) -->
+    <div class="gold-botanical-frame" aria-hidden="true">
+      <!-- SVG Shared Definitions -->
+      <svg class="frame-defs-svg" style="position: absolute; width: 0; height: 0;" aria-hidden="true">
+        <defs>
+          <linearGradient id="goldStemGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#fff2b2" />
+            <stop offset="35%" stop-color="#f5d061" />
+            <stop offset="70%" stop-color="#d4af37" />
+            <stop offset="100%" stop-color="#8c6206" />
+          </linearGradient>
+          <linearGradient id="goldPetalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#ffffff" />
+            <stop offset="25%" stop-color="#fff4b8" />
+            <stop offset="65%" stop-color="#f5cc50" />
+            <stop offset="100%" stop-color="#aa7a10" />
+          </linearGradient>
+          <linearGradient id="goldLeafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#fae588" stop-opacity="0.88" />
+            <stop offset="60%" stop-color="#c9971c" stop-opacity="0.65" />
+            <stop offset="100%" stop-color="#6e4c05" stop-opacity="0.35" />
+          </linearGradient>
+        </defs>
+      </svg>
+
+      <!-- Corner Top-Left -->
+      <div class="frame-corner corner-tl">
+        <svg viewBox="0 0 140 140" class="corner-svg">
+          <!-- Border guidelines -->
+          <path d="M 0 4 L 135 4 M 4 0 L 4 135" stroke="url(#goldStemGrad)" stroke-width="1.2" stroke-dasharray="6 3"
+            opacity="0.65" />
+          <path d="M 0 8 L 125 8 M 8 0 L 8 125" stroke="url(#goldStemGrad)" stroke-width="0.8" opacity="0.45" />
+          <!-- Main arching vine -->
+          <path d="M 0 14 Q 40 16 75 35 Q 105 55 118 95 Q 124 115 125 140" fill="none" stroke="url(#goldStemGrad)"
+            stroke-width="2.2" stroke-linecap="round" />
+          <path d="M 50 23 Q 85 18 135 15" fill="none" stroke="url(#goldStemGrad)" stroke-width="1.6"
+            stroke-linecap="round" />
+          <path d="M 23 50 Q 18 85 15 135" fill="none" stroke="url(#goldStemGrad)" stroke-width="1.6"
+            stroke-linecap="round" />
+          <!-- Spirals -->
+          <path d="M 75 35 C 95 25 110 38 102 52 C 96 62 82 58 84 48 C 86 42 94 44 94 48" fill="none"
+            stroke="url(#goldStemGrad)" stroke-width="1.2" stroke-linecap="round" />
+          <path d="M 35 75 C 25 95 38 110 52 102 C 62 96 58 82 48 84 C 42 86 44 94 48 94" fill="none"
+            stroke="url(#goldStemGrad)" stroke-width="1.2" stroke-linecap="round" />
+          <!-- Leaves with veins -->
+          <path d="M 30 15 C 38 6 52 8 55 18 C 45 22 34 20 30 15 Z" fill="url(#goldLeafGrad)"
+            stroke="url(#goldStemGrad)" stroke-width="0.8" />
+          <path d="M 30 15 Q 42 15 55 18" stroke="url(#goldStemGrad)" stroke-width="0.7" fill="none" />
+          <path d="M 80 20 C 88 10 102 12 106 22 C 96 26 85 24 80 20 Z" fill="url(#goldLeafGrad)"
+            stroke="url(#goldStemGrad)" stroke-width="0.8" />
+          <path d="M 80 20 Q 92 20 106 22" stroke="url(#goldStemGrad)" stroke-width="0.7" fill="none" />
+          <path d="M 15 30 C 6 38 8 52 18 55 C 22 45 20 34 15 30 Z" fill="url(#goldLeafGrad)"
+            stroke="url(#goldStemGrad)" stroke-width="0.8" />
+          <path d="M 15 30 Q 15 42 18 55" stroke="url(#goldStemGrad)" stroke-width="0.7" fill="none" />
+          <path d="M 20 80 C 10 88 12 102 22 106 C 26 96 24 85 20 80 Z" fill="url(#goldLeafGrad)"
+            stroke="url(#goldStemGrad)" stroke-width="0.8" />
+          <path d="M 20 80 Q 20 92 22 106" stroke="url(#goldStemGrad)" stroke-width="0.7" fill="none" />
+          <path d="M 68 45 C 64 35 74 25 85 30 C 84 42 76 46 68 45 Z" fill="url(#goldLeafGrad)"
+            stroke="url(#goldStemGrad)" stroke-width="0.8" />
+          <path d="M 45 68 C 35 64 25 74 30 85 C 42 84 46 76 45 68 Z" fill="url(#goldLeafGrad)"
+            stroke="url(#goldStemGrad)" stroke-width="0.8" />
+          <!-- Royal Lotus Blossom Center -->
+          <g transform="translate(48, 48)">
+            <path d="M 0 0 C -8 -16 8 -16 0 0" fill="url(#goldPetalGrad)" stroke="url(#goldStemGrad)" stroke-width="0.8"
+              transform="rotate(0)" />
+            <path d="M 0 0 C -8 -16 8 -16 0 0" fill="url(#goldPetalGrad)" stroke="url(#goldStemGrad)" stroke-width="0.8"
+              transform="rotate(45)" />
+            <path d="M 0 0 C -8 -16 8 -16 0 0" fill="url(#goldPetalGrad)" stroke="url(#goldStemGrad)" stroke-width="0.8"
+              transform="rotate(90)" />
+            <path d="M 0 0 C -8 -16 8 -16 0 0" fill="url(#goldPetalGrad)" stroke="url(#goldStemGrad)" stroke-width="0.8"
+              transform="rotate(135)" />
+            <path d="M 0 0 C -8 -16 8 -16 0 0" fill="url(#goldPetalGrad)" stroke="url(#goldStemGrad)" stroke-width="0.8"
+              transform="rotate(180)" />
+            <path d="M 0 0 C -8 -16 8 -16 0 0" fill="url(#goldPetalGrad)" stroke="url(#goldStemGrad)" stroke-width="0.8"
+              transform="rotate(225)" />
+            <path d="M 0 0 C -8 -16 8 -16 0 0" fill="url(#goldPetalGrad)" stroke="url(#goldStemGrad)" stroke-width="0.8"
+              transform="rotate(270)" />
+            <path d="M 0 0 C -8 -16 8 -16 0 0" fill="url(#goldPetalGrad)" stroke="url(#goldStemGrad)" stroke-width="0.8"
+              transform="rotate(315)" />
+            <circle cx="0" cy="0" r="4.5" fill="#fff8d6" stroke="url(#goldStemGrad)" stroke-width="0.8" />
+            <circle cx="0" cy="0" r="2" fill="#d4af37" />
+          </g>
+          <!-- Secondary Blossom Top -->
+          <g transform="translate(112, 16)">
+            <path d="M 0 0 C -5 -11 5 -11 0 0" fill="url(#goldPetalGrad)" stroke="url(#goldStemGrad)" stroke-width="0.6"
+              transform="rotate(0)" />
+            <path d="M 0 0 C -5 -11 5 -11 0 0" fill="url(#goldPetalGrad)" stroke="url(#goldStemGrad)" stroke-width="0.6"
+              transform="rotate(72)" />
+            <path d="M 0 0 C -5 -11 5 -11 0 0" fill="url(#goldPetalGrad)" stroke="url(#goldStemGrad)" stroke-width="0.6"
+              transform="rotate(144)" />
+            <path d="M 0 0 C -5 -11 5 -11 0 0" fill="url(#goldPetalGrad)" stroke="url(#goldStemGrad)" stroke-width="0.6"
+              transform="rotate(216)" />
+            <path d="M 0 0 C -5 -11 5 -11 0 0" fill="url(#goldPetalGrad)" stroke="url(#goldStemGrad)" stroke-width="0.6"
+              transform="rotate(288)" />
+            <circle cx="0" cy="0" r="2.5" fill="#fff8d6" />
+          </g>
+          <!-- Secondary Blossom Left -->
+          <g transform="translate(16, 112)">
+            <path d="M 0 0 C -5 -11 5 -11 0 0" fill="url(#goldPetalGrad)" stroke="url(#goldStemGrad)" stroke-width="0.6"
+              transform="rotate(0)" />
+            <path d="M 0 0 C -5 -11 5 -11 0 0" fill="url(#goldPetalGrad)" stroke="url(#goldStemGrad)" stroke-width="0.6"
+              transform="rotate(72)" />
+            <path d="M 0 0 C -5 -11 5 -11 0 0" fill="url(#goldPetalGrad)" stroke="url(#goldStemGrad)" stroke-width="0.6"
+              transform="rotate(144)" />
+            <path d="M 0 0 C -5 -11 5 -11 0 0" fill="url(#goldPetalGrad)" stroke="url(#goldStemGrad)" stroke-width="0.6"
+              transform="rotate(216)" />
+            <path d="M 0 0 C -5 -11 5 -11 0 0" fill="url(#goldPetalGrad)" stroke="url(#goldStemGrad)" stroke-width="0.6"
+              transform="rotate(288)" />
+            <circle cx="0" cy="0" r="2.5" fill="#fff8d6" />
+          </g>
+          <!-- Dew Buds -->
+          <circle cx="132" cy="15" r="2.5" fill="#ffe066" />
+          <circle cx="15" cy="132" r="2.5" fill="#ffe066" />
+          <circle cx="100" cy="62" r="2" fill="#ffe066" />
+          <circle cx="62" cy="100" r="2" fill="#ffe066" />
+        </svg>
+      </div>
+
+      <!-- Corner Top-Right (Mirrored) -->
+      <div class="frame-corner corner-tr">
+        <svg viewBox="0 0 140 140" class="corner-svg">
+          <path d="M 0 4 L 135 4 M 4 0 L 4 135" stroke="url(#goldStemGrad)" stroke-width="1.2" stroke-dasharray="6 3"
+            opacity="0.65" />
+          <path d="M 0 8 L 125 8 M 8 0 L 8 125" stroke="url(#goldStemGrad)" stroke-width="0.8" opacity="0.45" />
+          <path d="M 0 14 Q 40 16 75 35 Q 105 55 118 95 Q 124 115 125 140" fill="none" stroke="url(#goldStemGrad)"
+            stroke-width="2.2" stroke-linecap="round" />
+          <path d="M 50 23 Q 85 18 135 15" fill="none" stroke="url(#goldStemGrad)" stroke-width="1.6"
+            stroke-linecap="round" />
+          <path d="M 23 50 Q 18 85 15 135" fill="none" stroke="url(#goldStemGrad)" stroke-width="1.6"
+            stroke-linecap="round" />
+          <path d="M 75 35 C 95 25 110 38 102 52 C 96 62 82 58 84 48 C 86 42 94 44 94 48" fill="none"
+            stroke="url(#goldStemGrad)" stroke-width="1.2" stroke-linecap="round" />
+          <path d="M 35 75 C 25 95 38 110 52 102 C 62 96 58 82 48 84 C 42 86 44 94 48 94" fill="none"
+            stroke="url(#goldStemGrad)" stroke-width="1.2" stroke-linecap="round" />
+          <path d="M 30 15 C 38 6 52 8 55 18 C 45 22 34 20 30 15 Z" fill="url(#goldLeafGrad)"
+            stroke="url(#goldStemGrad)" stroke-width="0.8" />
+          <path d="M 30 15 Q 42 15 55 18" stroke="url(#goldStemGrad)" stroke-width="0.7" fill="none" />
+          <path d="M 80 20 C 88 10 102 12 106 22 C 96 26 85 24 80 20 Z" fill="url(#goldLeafGrad)"
+            stroke="url(#goldStemGrad)" stroke-width="0.8" />
+          <path d="M 80 20 Q 92 20 106 22" stroke="url(#goldStemGrad)" stroke-width="0.7" fill="none" />
+          <path d="M 15 30 C 6 38 8 52 18 55 C 22 45 20 34 15 30 Z" fill="url(#goldLeafGrad)"
+            stroke="url(#goldStemGrad)" stroke-width="0.8" />
+          <path d="M 15 30 Q 15 42 18 55" stroke="url(#goldStemGrad)" stroke-width="0.7" fill="none" />
+          <path d="M 20 80 C 10 88 12 102 22 106 C 26 96 24 85 20 80 Z" fill="url(#goldLeafGrad)"
+            stroke="url(#goldStemGrad)" stroke-width="0.8" />
+          <path d="M 20 80 Q 20 92 22 106" stroke="url(#goldStemGrad)" stroke-width="0.7" fill="none" />
+          <path d="M 68 45 C 64 35 74 25 85 30 C 84 42 76 46 68 45 Z" fill="url(#goldLeafGrad)"
+            stroke="url(#goldStemGrad)" stroke-width="0.8" />
+          <path d="M 45 68 C 35 64 25 74 30 85 C 42 84 46 76 45 68 Z" fill="url(#goldLeafGrad)"
+            stroke="url(#goldStemGrad)" stroke-width="0.8" />
+          <g transform="translate(48, 48)">
+            <path d="M 0 0 C -8 -16 8 -16 0 0" fill="url(#goldPetalGrad)" stroke="url(#goldStemGrad)" stroke-width="0.8"
+              transform="rotate(0)" />
+            <path d="M 0 0 C -8 -16 8 -16 0 0" fill="url(#goldPetalGrad)" stroke="url(#goldStemGrad)" stroke-width="0.8"
+              transform="rotate(45)" />
+            <path d="M 0 0 C -8 -16 8 -16 0 0" fill="url(#goldPetalGrad)" stroke="url(#goldStemGrad)" stroke-width="0.8"
+              transform="rotate(90)" />
+            <path d="M 0 0 C -8 -16 8 -16 0 0" fill="url(#goldPetalGrad)" stroke="url(#goldStemGrad)" stroke-width="0.8"
+              transform="rotate(135)" />
+            <path d="M 0 0 C -8 -16 8 -16 0 0" fill="url(#goldPetalGrad)" stroke="url(#goldStemGrad)" stroke-width="0.8"
+              transform="rotate(180)" />
+            <path d="M 0 0 C -8 -16 8 -16 0 0" fill="url(#goldPetalGrad)" stroke="url(#goldStemGrad)" stroke-width="0.8"
+              transform="rotate(225)" />
+            <path d="M 0 0 C -8 -16 8 -16 0 0" fill="url(#goldPetalGrad)" stroke="url(#goldStemGrad)" stroke-width="0.8"
+              transform="rotate(270)" />
+            <path d="M 0 0 C -8 -16 8 -16 0 0" fill="url(#goldPetalGrad)" stroke="url(#goldStemGrad)" stroke-width="0.8"
+              transform="rotate(315)" />
+            <circle cx="0" cy="0" r="4.5" fill="#fff8d6" stroke="url(#goldStemGrad)" stroke-width="0.8" />
+            <circle cx="0" cy="0" r="2" fill="#d4af37" />
+          </g>
+          <g transform="translate(112, 16)">
+            <path d="M 0 0 C -5 -11 5 -11 0 0" fill="url(#goldPetalGrad)" stroke="url(#goldStemGrad)" stroke-width="0.6"
+              transform="rotate(0)" />
+            <path d="M 0 0 C -5 -11 5 -11 0 0" fill="url(#goldPetalGrad)" stroke="url(#goldStemGrad)" stroke-width="0.6"
+              transform="rotate(72)" />
+            <path d="M 0 0 C -5 -11 5 -11 0 0" fill="url(#goldPetalGrad)" stroke="url(#goldStemGrad)" stroke-width="0.6"
+              transform="rotate(144)" />
+            <path d="M 0 0 C -5 -11 5 -11 0 0" fill="url(#goldPetalGrad)" stroke="url(#goldStemGrad)" stroke-width="0.6"
+              transform="rotate(216)" />
+            <path d="M 0 0 C -5 -11 5 -11 0 0" fill="url(#goldPetalGrad)" stroke="url(#goldStemGrad)" stroke-width="0.6"
+              transform="rotate(288)" />
+            <circle cx="0" cy="0" r="2.5" fill="#fff8d6" />
+          </g>
+          <g transform="translate(16, 112)">
+            <path d="M 0 0 C -5 -11 5 -11 0 0" fill="url(#goldPetalGrad)" stroke="url(#goldStemGrad)" stroke-width="0.6"
+              transform="rotate(0)" />
+            <path d="M 0 0 C -5 -11 5 -11 0 0" fill="url(#goldPetalGrad)" stroke="url(#goldStemGrad)" stroke-width="0.6"
+              transform="rotate(72)" />
+            <path d="M 0 0 C -5 -11 5 -11 0 0" fill="url(#goldPetalGrad)" stroke="url(#goldStemGrad)" stroke-width="0.6"
+              transform="rotate(144)" />
+            <path d="M 0 0 C -5 -11 5 -11 0 0" fill="url(#goldPetalGrad)" stroke="url(#goldStemGrad)" stroke-width="0.6"
+              transform="rotate(216)" />
+            <path d="M 0 0 C -5 -11 5 -11 0 0" fill="url(#goldPetalGrad)" stroke="url(#goldStemGrad)" stroke-width="0.6"
+              transform="rotate(288)" />
+            <circle cx="0" cy="0" r="2.5" fill="#fff8d6" />
+          </g>
+          <circle cx="132" cy="15" r="2.5" fill="#ffe066" />
+          <circle cx="15" cy="132" r="2.5" fill="#ffe066" />
+          <circle cx="100" cy="62" r="2" fill="#ffe066" />
+          <circle cx="62" cy="100" r="2" fill="#ffe066" />
+        </svg>
+      </div>
+
+      <!-- Side Vine Runner Left -->
+      <div class="frame-runner runner-left">
+        <svg viewBox="0 0 24 220" class="runner-svg">
+          <path d="M 4 0 Q 15 55 5 110 Q 15 165 4 220" fill="none" stroke="url(#goldStemGrad)" stroke-width="1.8"
+            stroke-linecap="round" />
+          <path d="M 6 35 C 16 30 20 42 10 48 Z" fill="url(#goldLeafGrad)" stroke="url(#goldStemGrad)"
+            stroke-width="0.7" />
+          <path d="M 5 80 C -4 75 0 88 8 90 Z" fill="url(#goldLeafGrad)" stroke="url(#goldStemGrad)"
+            stroke-width="0.7" />
+          <path d="M 7 135 C 18 130 22 142 12 148 Z" fill="url(#goldLeafGrad)" stroke="url(#goldStemGrad)"
+            stroke-width="0.7" />
+          <path d="M 5 180 C -4 175 0 188 8 190 Z" fill="url(#goldLeafGrad)" stroke="url(#goldStemGrad)"
+            stroke-width="0.7" />
+          <g transform="translate(9, 110)">
+            <circle cx="0" cy="-5" r="3" fill="url(#goldPetalGrad)" />
+            <circle cx="5" cy="0" r="3" fill="url(#goldPetalGrad)" />
+            <circle cx="0" cy="5" r="3" fill="url(#goldPetalGrad)" />
+            <circle cx="-5" cy="0" r="3" fill="url(#goldPetalGrad)" />
+            <circle cx="0" cy="0" r="2.2" fill="#fff8d6" />
+          </g>
+          <circle cx="16" cy="40" r="1.8" fill="#ffe066" />
+          <circle cx="18" cy="140" r="1.8" fill="#ffe066" />
+        </svg>
+      </div>
+
+      <!-- Side Vine Runner Right (Mirrored) -->
+      <div class="frame-runner runner-right">
+        <svg viewBox="0 0 24 220" class="runner-svg">
+          <path d="M 4 0 Q 15 55 5 110 Q 15 165 4 220" fill="none" stroke="url(#goldStemGrad)" stroke-width="1.8"
+            stroke-linecap="round" />
+          <path d="M 6 35 C 16 30 20 42 10 48 Z" fill="url(#goldLeafGrad)" stroke="url(#goldStemGrad)"
+            stroke-width="0.7" />
+          <path d="M 5 80 C -4 75 0 88 8 90 Z" fill="url(#goldLeafGrad)" stroke="url(#goldStemGrad)"
+            stroke-width="0.7" />
+          <path d="M 7 135 C 18 130 22 142 12 148 Z" fill="url(#goldLeafGrad)" stroke="url(#goldStemGrad)"
+            stroke-width="0.7" />
+          <path d="M 5 180 C -4 175 0 188 8 190 Z" fill="url(#goldLeafGrad)" stroke="url(#goldStemGrad)"
+            stroke-width="0.7" />
+          <g transform="translate(9, 110)">
+            <circle cx="0" cy="-5" r="3" fill="url(#goldPetalGrad)" />
+            <circle cx="5" cy="0" r="3" fill="url(#goldPetalGrad)" />
+            <circle cx="0" cy="5" r="3" fill="url(#goldPetalGrad)" />
+            <circle cx="-5" cy="0" r="3" fill="url(#goldPetalGrad)" />
+            <circle cx="0" cy="0" r="2.2" fill="#fff8d6" />
+          </g>
+          <circle cx="16" cy="40" r="1.8" fill="#ffe066" />
+          <circle cx="18" cy="140" r="1.8" fill="#ffe066" />
+        </svg>
+      </div>
+
+      <!-- Corner Bottom-Left -->
+      <div class="frame-corner corner-bl">
+        <svg viewBox="0 0 140 140" class="corner-svg">
+          <path d="M 0 4 L 135 4 M 4 0 L 4 135" stroke="url(#goldStemGrad)" stroke-width="1.2" stroke-dasharray="6 3"
+            opacity="0.65" />
+          <path d="M 0 8 L 125 8 M 8 0 L 8 125" stroke="url(#goldStemGrad)" stroke-width="0.8" opacity="0.45" />
+          <path d="M 0 14 Q 40 16 75 35 Q 105 55 118 95 Q 124 115 125 140" fill="none" stroke="url(#goldStemGrad)"
+            stroke-width="2.2" stroke-linecap="round" />
+          <path d="M 50 23 Q 85 18 135 15" fill="none" stroke="url(#goldStemGrad)" stroke-width="1.6"
+            stroke-linecap="round" />
+          <path d="M 23 50 Q 18 85 15 135" fill="none" stroke="url(#goldStemGrad)" stroke-width="1.6"
+            stroke-linecap="round" />
+          <path d="M 75 35 C 95 25 110 38 102 52 C 96 62 82 58 84 48 C 86 42 94 44 94 48" fill="none"
+            stroke="url(#goldStemGrad)" stroke-width="1.2" stroke-linecap="round" />
+          <path d="M 35 75 C 25 95 38 110 52 102 C 62 96 58 82 48 84 C 42 86 44 94 48 94" fill="none"
+            stroke="url(#goldStemGrad)" stroke-width="1.2" stroke-linecap="round" />
+          <path d="M 30 15 C 38 6 52 8 55 18 C 45 22 34 20 30 15 Z" fill="url(#goldLeafGrad)"
+            stroke="url(#goldStemGrad)" stroke-width="0.8" />
+          <path d="M 30 15 Q 42 15 55 18" stroke="url(#goldStemGrad)" stroke-width="0.7" fill="none" />
+          <path d="M 80 20 C 88 10 102 12 106 22 C 96 26 85 24 80 20 Z" fill="url(#goldLeafGrad)"
+            stroke="url(#goldStemGrad)" stroke-width="0.8" />
+          <path d="M 80 20 Q 92 20 106 22" stroke="url(#goldStemGrad)" stroke-width="0.7" fill="none" />
+          <path d="M 15 30 C 6 38 8 52 18 55 C 22 45 20 34 15 30 Z" fill="url(#goldLeafGrad)"
+            stroke="url(#goldStemGrad)" stroke-width="0.8" />
+          <path d="M 15 30 Q 15 42 18 55" stroke="url(#goldStemGrad)" stroke-width="0.7" fill="none" />
+          <path d="M 20 80 C 10 88 12 102 22 106 C 26 96 24 85 20 80 Z" fill="url(#goldLeafGrad)"
+            stroke="url(#goldStemGrad)" stroke-width="0.8" />
+          <path d="M 20 80 Q 20 92 22 106" stroke="url(#goldStemGrad)" stroke-width="0.7" fill="none" />
+          <path d="M 68 45 C 64 35 74 25 85 30 C 84 42 76 46 68 45 Z" fill="url(#goldLeafGrad)"
+            stroke="url(#goldStemGrad)" stroke-width="0.8" />
+          <path d="M 45 68 C 35 64 25 74 30 85 C 42 84 46 76 45 68 Z" fill="url(#goldLeafGrad)"
+            stroke="url(#goldStemGrad)" stroke-width="0.8" />
+          <g transform="translate(48, 48)">
+            <path d="M 0 0 C -8 -16 8 -16 0 0" fill="url(#goldPetalGrad)" stroke="url(#goldStemGrad)" stroke-width="0.8"
+              transform="rotate(0)" />
+            <path d="M 0 0 C -8 -16 8 -16 0 0" fill="url(#goldPetalGrad)" stroke="url(#goldStemGrad)" stroke-width="0.8"
+              transform="rotate(45)" />
+            <path d="M 0 0 C -8 -16 8 -16 0 0" fill="url(#goldPetalGrad)" stroke="url(#goldStemGrad)" stroke-width="0.8"
+              transform="rotate(90)" />
+            <path d="M 0 0 C -8 -16 8 -16 0 0" fill="url(#goldPetalGrad)" stroke="url(#goldStemGrad)" stroke-width="0.8"
+              transform="rotate(135)" />
+            <path d="M 0 0 C -8 -16 8 -16 0 0" fill="url(#goldPetalGrad)" stroke="url(#goldStemGrad)" stroke-width="0.8"
+              transform="rotate(180)" />
+            <path d="M 0 0 C -8 -16 8 -16 0 0" fill="url(#goldPetalGrad)" stroke="url(#goldStemGrad)" stroke-width="0.8"
+              transform="rotate(225)" />
+            <path d="M 0 0 C -8 -16 8 -16 0 0" fill="url(#goldPetalGrad)" stroke="url(#goldStemGrad)" stroke-width="0.8"
+              transform="rotate(270)" />
+            <path d="M 0 0 C -8 -16 8 -16 0 0" fill="url(#goldPetalGrad)" stroke="url(#goldStemGrad)" stroke-width="0.8"
+              transform="rotate(315)" />
+            <circle cx="0" cy="0" r="4.5" fill="#fff8d6" stroke="url(#goldStemGrad)" stroke-width="0.8" />
+            <circle cx="0" cy="0" r="2" fill="#d4af37" />
+          </g>
+          <circle cx="132" cy="15" r="2.5" fill="#ffe066" />
+          <circle cx="15" cy="132" r="2.5" fill="#ffe066" />
+        </svg>
+      </div>
+
+      <!-- Corner Bottom-Right -->
+      <div class="frame-corner corner-br">
+        <svg viewBox="0 0 140 140" class="corner-svg">
+          <path d="M 0 4 L 135 4 M 4 0 L 4 135" stroke="url(#goldStemGrad)" stroke-width="1.2" stroke-dasharray="6 3"
+            opacity="0.65" />
+          <path d="M 0 8 L 125 8 M 8 0 L 8 125" stroke="url(#goldStemGrad)" stroke-width="0.8" opacity="0.45" />
+          <path d="M 0 14 Q 40 16 75 35 Q 105 55 118 95 Q 124 115 125 140" fill="none" stroke="url(#goldStemGrad)"
+            stroke-width="2.2" stroke-linecap="round" />
+          <path d="M 50 23 Q 85 18 135 15" fill="none" stroke="url(#goldStemGrad)" stroke-width="1.6"
+            stroke-linecap="round" />
+          <path d="M 23 50 Q 18 85 15 135" fill="none" stroke="url(#goldStemGrad)" stroke-width="1.6"
+            stroke-linecap="round" />
+          <path d="M 75 35 C 95 25 110 38 102 52 C 96 62 82 58 84 48 C 86 42 94 44 94 48" fill="none"
+            stroke="url(#goldStemGrad)" stroke-width="1.2" stroke-linecap="round" />
+          <path d="M 35 75 C 25 95 38 110 52 102 C 62 96 58 82 48 84 C 42 86 44 94 48 94" fill="none"
+            stroke="url(#goldStemGrad)" stroke-width="1.2" stroke-linecap="round" />
+          <path d="M 30 15 C 38 6 52 8 55 18 C 45 22 34 20 30 15 Z" fill="url(#goldLeafGrad)"
+            stroke="url(#goldStemGrad)" stroke-width="0.8" />
+          <path d="M 30 15 Q 42 15 55 18" stroke="url(#goldStemGrad)" stroke-width="0.7" fill="none" />
+          <path d="M 80 20 C 88 10 102 12 106 22 C 96 26 85 24 80 20 Z" fill="url(#goldLeafGrad)"
+            stroke="url(#goldStemGrad)" stroke-width="0.8" />
+          <path d="M 80 20 Q 92 20 106 22" stroke="url(#goldStemGrad)" stroke-width="0.7" fill="none" />
+          <path d="M 15 30 C 6 38 8 52 18 55 C 22 45 20 34 15 30 Z" fill="url(#goldLeafGrad)"
+            stroke="url(#goldStemGrad)" stroke-width="0.8" />
+          <path d="M 15 30 Q 15 42 18 55" stroke="url(#goldStemGrad)" stroke-width="0.7" fill="none" />
+          <path d="M 20 80 C 10 88 12 102 22 106 C 26 96 24 85 20 80 Z" fill="url(#goldLeafGrad)"
+            stroke="url(#goldStemGrad)" stroke-width="0.8" />
+          <path d="M 20 80 Q 20 92 22 106" stroke="url(#goldStemGrad)" stroke-width="0.7" fill="none" />
+          <path d="M 68 45 C 64 35 74 25 85 30 C 84 42 76 46 68 45 Z" fill="url(#goldLeafGrad)"
+            stroke="url(#goldStemGrad)" stroke-width="0.8" />
+          <path d="M 45 68 C 35 64 25 74 30 85 C 42 84 46 76 45 68 Z" fill="url(#goldLeafGrad)"
+            stroke="url(#goldStemGrad)" stroke-width="0.8" />
+          <g transform="translate(48, 48)">
+            <path d="M 0 0 C -8 -16 8 -16 0 0" fill="url(#goldPetalGrad)" stroke="url(#goldStemGrad)" stroke-width="0.8"
+              transform="rotate(0)" />
+            <path d="M 0 0 C -8 -16 8 -16 0 0" fill="url(#goldPetalGrad)" stroke="url(#goldStemGrad)" stroke-width="0.8"
+              transform="rotate(45)" />
+            <path d="M 0 0 C -8 -16 8 -16 0 0" fill="url(#goldPetalGrad)" stroke="url(#goldStemGrad)" stroke-width="0.8"
+              transform="rotate(90)" />
+            <path d="M 0 0 C -8 -16 8 -16 0 0" fill="url(#goldPetalGrad)" stroke="url(#goldStemGrad)" stroke-width="0.8"
+              transform="rotate(135)" />
+            <path d="M 0 0 C -8 -16 8 -16 0 0" fill="url(#goldPetalGrad)" stroke="url(#goldStemGrad)" stroke-width="0.8"
+              transform="rotate(180)" />
+            <path d="M 0 0 C -8 -16 8 -16 0 0" fill="url(#goldPetalGrad)" stroke="url(#goldStemGrad)" stroke-width="0.8"
+              transform="rotate(225)" />
+            <path d="M 0 0 C -8 -16 8 -16 0 0" fill="url(#goldPetalGrad)" stroke="url(#goldStemGrad)" stroke-width="0.8"
+              transform="rotate(270)" />
+            <path d="M 0 0 C -8 -16 8 -16 0 0" fill="url(#goldPetalGrad)" stroke="url(#goldStemGrad)" stroke-width="0.8"
+              transform="rotate(315)" />
+            <circle cx="0" cy="0" r="4.5" fill="#fff8d6" stroke="url(#goldStemGrad)" stroke-width="0.8" />
+            <circle cx="0" cy="0" r="2" fill="#d4af37" />
+          </g>
+          <circle cx="132" cy="15" r="2.5" fill="#ffe066" />
+          <circle cx="15" cy="132" r="2.5" fill="#ffe066" />
+        </svg>
+      </div>
+    </div>
+
+    <!-- Falling Lotus, Flowers & Leaves Animation Canvas (Minimal & Seamless) -->
+    <canvas id="fallingPetalsCanvas" class="falling-petals-canvas" aria-hidden="true"></canvas>
+
+    <!-- Stage 1: Mobile Initial "Tap to Open" Screen with 2px Subtle Blur -->
+    <div id="tapScreen" class="screen-overlay tap-screen active">
+      <div class="tap-content">
+        <button id="tapToBeginBtn" class="tap-begin-button" aria-label="Tap to Open" title="Tap to Open">
+          <span class="button-glow"></span>
+          <span class="button-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </span>
+          <span class="button-text">Tap to Open</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Stage 2: Mobile Fullscreen Cinematic Video Playback -->
+    <div id="videoScreen" class="screen-overlay video-screen">
+      <!-- Unobtrusive Top Controls -->
+      <header class="video-top-bar">
+        <div class="video-brand-tag">Mamidi's Marriage</div>
+      </header>
+
+      <!-- Background Auspicious Veena Music (Sita Ramam Veena by Mahesh Prasad) -->
+      <audio id="bgMusic" src="Kaanunna%20Kalyanam%20Sita%20Ramam%20Veena%20Mahesh%20Prasad.mp3" preload="auto" loop playsinline></audio>
+
+      <!-- Video Card Stage -->
+      <main class="video-stage">
+        <div class="video-card">
+          <video id="mainVideo" class="main-video" src="MarriageVideo.mp4" playsinline preload="auto" muted
+            webkit-playsinline="true">
+          </video>
+
+          <!-- Tap Indicator (Shows Play or Pause Icon) -->
+          <div id="playIndicator" class="play-indicator hidden" aria-hidden="true">
+            <svg id="playIconSvg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+            <svg id="pauseIconSvg" class="hidden" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+            </svg>
+          </div>
+
+          <!-- Bottom Progress Bar -->
+          <div class="progress-container">
+            <div id="progressBar" class="progress-bar"></div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Bottom Controls Bar during Video Playback (Small Round Buttons with Symbols Only) -->
+      <div class="video-bottom-controls-bar">
+        <button id="soundToggleBtn" class="round-control-btn" title="Toggle Music" aria-label="Toggle Music">
+          <svg id="iconSoundOn" class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" />
+          </svg>
+          <svg id="iconSoundOff" class="icon-svg hidden" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z" />
+          </svg>
+        </button>
+
+        <button id="skipToDetailsBtn" class="round-control-btn skip-details-btn" title="Skip to Wedding Details" aria-label="Skip to Wedding Details">
+          <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Stage 3: After Video Completion (Clean View: Last Frame Background + Navbar) -->
+    <div id="finalScreen" class="screen-overlay final-screen">
+
+      <!-- Hidden SVG Defs for Rounded Heart Card Clipping & Gold Gradients -->
+      <svg width="0" height="0" class="svg-defs-hidden" style="position: absolute; pointer-events: none;" aria-hidden="true">
+        <defs>
+          <clipPath id="roundedHeartClip" clipPathUnits="userSpaceOnUse">
+            <path d="M 100 45 C 55 -8 0 30 0 84 C 0 132 46 156 100 178 C 154 156 200 132 200 84 C 200 30 145 -8 100 45 Z" />
+          </clipPath>
+          <radialGradient id="heartGoldSurface" cx="50%" cy="32%" r="72%">
+            <stop offset="0%" stop-color="#3e2a08" />
+            <stop offset="38%" stop-color="#241704" />
+            <stop offset="72%" stop-color="#140d02" />
+            <stop offset="100%" stop-color="#080501" />
+          </radialGradient>
+          <linearGradient id="heartGoldRim" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#fffce8" />
+            <stop offset="22%" stop-color="#fae588" />
+            <stop offset="48%" stop-color="#ffd700" />
+            <stop offset="75%" stop-color="#c8981d" />
+            <stop offset="100%" stop-color="#8a6106" />
+          </linearGradient>
+          <linearGradient id="heartGoldButton" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#fae588" />
+            <stop offset="50%" stop-color="#ffd700" />
+            <stop offset="100%" stop-color="#d4af37" />
+          </linearGradient>
+          <linearGradient id="veinGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#fff4b8" />
+            <stop offset="25%" stop-color="#e5b020" />
+            <stop offset="50%" stop-color="#b87a14" />
+            <stop offset="75%" stop-color="#7a3d09" />
+            <stop offset="100%" stop-color="#461d04" />
+          </linearGradient>
+          <filter id="heartRimGlow" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="2" stdDeviation="5" flood-color="#ffd700" flood-opacity="0.65"/>
+          </filter>
+        </defs>
+      </svg>
+
+      <!-- Seamlessly Blended Glassmorphic Nav Bar (With Om on both sides) -->
+      <nav class="theme-nav-bar">
+        <div class="nav-container">
+          <div class="nav-title-wrapper">
+            <span class="nav-om nav-om-left" aria-hidden="true">ॐ</span>
+            <h1 class="nav-title">
+              <span class="nav-title-main">Mamidi's Wedding</span>
+              <span class="nav-title-sub">Invite</span>
+            </h1>
+            <span class="nav-om nav-om-right" aria-hidden="true">ॐ</span>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Stage 3 View 1: Groom's Parents Inviting Hero Page (Takes full viewport height) -->
+      <div class="parents-hero-view">
+
+        <!-- Subtle Auspicious Marriage Sloka (Single Small Elegant Line Below Nav Bar, No Background) -->
+        <div class="sloka-single-line-wrapper" aria-label="Auspicious Marriage Sloka">
+          <p class="sloka-single-line">
+            ॥ माङ्गल्यं तन्तुनानेन मम जीवन हेतुना कण्ठे बध्नामि शुभगे सञ्जीव शरदः शतम् ॥
+          </p>
+        </div>
+
+        <!-- Groom's Parents Inviting (Centered Hero Title with Cursive Underline) -->
+        <section class="parents-section" aria-label="Groom's Parents Inviting">
+          <div class="parents-content-center">
+            <h2 class="parents-names-title">
+              <span class="highlight-name name-first">Mamidi Appalaraju</span>
+              <span class="name-ampersand-cursive">&amp;</span>
+              <span class="highlight-name name-second">Smt. Umadevi</span>
+            </h2>
+
+            <!-- Elegant Cursive Calligraphy Underline Flourish -->
+            <div class="cursive-underline-wrapper" aria-hidden="true">
+              <svg class="cursive-underline-svg" viewBox="0 0 320 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 25 18 Q 70 6 120 17 T 160 17 T 200 17 T 295 18" stroke="url(#goldUnderline)" stroke-width="2.2"
+                  stroke-linecap="round" />
+                <path d="M 15 18 C 15 10 32 6 36 15 C 40 24 24 26 18 19" stroke="url(#goldUnderline)" stroke-width="1.8"
+                  stroke-linecap="round" />
+                <path d="M 305 18 C 305 10 288 6 284 15 C 280 24 296 26 302 19" stroke="url(#goldUnderline)"
+                  stroke-width="1.8" stroke-linecap="round" />
+                <circle cx="160" cy="17" r="3.5" fill="url(#goldUnderline)" />
+                <defs>
+                  <linearGradient id="goldUnderline" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#fae588" stop-opacity="0.2" />
+                    <stop offset="25%" stop-color="#fae588" stop-opacity="0.95" />
+                    <stop offset="50%" stop-color="#fff2b2" stop-opacity="1" />
+                    <stop offset="75%" stop-color="#d4af37" stop-opacity="0.95" />
+                    <stop offset="100%" stop-color="#aa820a" stop-opacity="0.2" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+
+            <!-- Invitation Solicitation & Blessings Wishes Text -->
+            <div class="invitation-wishes-block">
+              <p class="invitation-solicitation-title">Cordially Solicit Your Gracious Presence</p>
+              <p class="invitation-prose-text">
+                and heartfelt blessings with family and friends on the auspicious occasion of the wedding ceremony of
+                their beloved son.
+              </p>
+
+              <div class="wishes-divider" aria-hidden="true">
+                <span class="wishes-line"></span>
+                <span class="wishes-symbol">🪔</span>
+                <span class="wishes-line"></span>
+              </div>
+
+              <p class="invitation-blessing-quote">
+                "Your esteemed presence and warm blessings will make this sacred union truly memorable and joyful."
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Bottom Stage: Roaring Elephants + Scroll Prompt to Couple -->
+        <div class="bottom-stage-wrapper">
+          <!-- Left Royal Elephant -->
+          <div class="elephant-wrapper elephant-left" aria-hidden="true">
+            <svg class="elephant-svg" viewBox="0 0 100 85" preserveAspectRatio="xMidYMid meet">
+              <defs>
+                <linearGradient id="elephantGold" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#fae588" />
+                  <stop offset="45%" stop-color="#d4af37" />
+                  <stop offset="100%" stop-color="#8c6206" />
+                </linearGradient>
+                <linearGradient id="elephantSaddle" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#801015" />
+                  <stop offset="50%" stop-color="#d4af37" />
+                  <stop offset="100%" stop-color="#801015" />
+                </linearGradient>
+              </defs>
+              <!-- Far Legs -->
+              <path d="M 23 45 L 23 75 L 29 75 L 29 46 Z" fill="#6d4c05" opacity="0.85" />
+              <path d="M 43 45 L 43 75 L 49 75 L 49 46 Z" fill="#6d4c05" opacity="0.85" />
+              <!-- Main Body & Near Legs -->
+              <path
+                d="M 16 75 L 16 46 C 14 38 18 26 32 24 C 42 22 48 24 54 30 C 58 35 56 42 52 46 L 52 75 L 45 75 L 45 52 C 40 54 28 54 24 52 L 24 75 Z"
+                fill="url(#elephantGold)" />
+              <!-- Tail -->
+              <path d="M 15 36 C 12 42 13 50 14 55" stroke="url(#elephantGold)" stroke-width="2" fill="none"
+                stroke-linecap="round" />
+              <circle cx="14" cy="56" r="2" fill="#ffd700" />
+              <!-- Head Dome -->
+              <path d="M 44 26 C 46 16 58 16 62 25 C 64 29 64 34 58 36 Z" fill="url(#elephantGold)" />
+              <!-- Tilak -->
+              <circle cx="56" cy="24" r="2.2" fill="#e71d24" />
+              <circle cx="56" cy="24" r="3.2" stroke="#ffe066" stroke-width="0.8" fill="none" />
+              <!-- Tusk -->
+              <path d="M 54 37 C 59 39 65 39 69 35 C 65 37 59 37 54 39 Z" fill="#ffffff"
+                filter="drop-shadow(0 0 2px #fff)" />
+              <!-- Ear -->
+              <path d="M 46 22 C 38 22 36 32 38 42 C 40 46 45 46 48 38 C 50 32 49 24 46 22 Z" fill="#b88619"
+                stroke="#ffe066" stroke-width="1" />
+              <circle cx="43" cy="40" r="1.5" fill="#ffe066" />
+              <!-- Saddle (Jhool) -->
+              <path d="M 22 30 C 26 28 36 28 42 30 L 44 48 C 38 51 28 51 22 48 Z" fill="url(#elephantSaddle)"
+                stroke="#ffe066" stroke-width="1" />
+              <circle cx="25" cy="49" r="1.2" fill="#ffe066" />
+              <circle cx="33" cy="51" r="1.2" fill="#ffe066" />
+              <circle cx="41" cy="49" r="1.2" fill="#ffe066" />
+              <!-- Roaring Animated Trunk -->
+              <g class="elephant-trunk trunk-anim-left">
+                <path
+                  d="M 56 32 C 60 36 64 44 66 48 C 70 56 76 54 78 46 C 80 38 76 28 72 24 C 70 22 68 25 70 28 C 72 32 74 38 72 44 C 70 48 66 46 64 42 C 62 38 58 32 56 32 Z"
+                  fill="url(#elephantGold)" />
+                <circle cx="71" cy="24" r="1.8" fill="#ffe066" />
+              </g>
+            </svg>
+          </div>
+
+          <!-- Subtle Scroll Down Indicator -->
+          <div id="scrollToCouplePrompt" class="scroll-to-couple-prompt" role="button" tabindex="0" aria-label="Scroll to see more">
+            <span class="scroll-prompt-text">Scroll to see more</span>
+            <span class="scroll-prompt-chevron" aria-hidden="true">▼</span>
+          </div>
+
+          <!-- Right Royal Elephant (Mirrored Facing Left) -->
+          <div class="elephant-wrapper elephant-right" aria-hidden="true">
+            <svg class="elephant-svg" viewBox="0 0 100 85" preserveAspectRatio="xMidYMid meet">
+              <!-- Far Legs -->
+              <path d="M 23 45 L 23 75 L 29 75 L 29 46 Z" fill="#6d4c05" opacity="0.85" />
+              <path d="M 43 45 L 43 75 L 49 75 L 49 46 Z" fill="#6d4c05" opacity="0.85" />
+              <!-- Main Body & Near Legs -->
+              <path
+                d="M 16 75 L 16 46 C 14 38 18 26 32 24 C 42 22 48 24 54 30 C 58 35 56 42 52 46 L 52 75 L 45 75 L 45 52 C 40 54 28 54 24 52 L 24 75 Z"
+                fill="url(#elephantGold)" />
+              <!-- Tail -->
+              <path d="M 15 36 C 12 42 13 50 14 55" stroke="url(#elephantGold)" stroke-width="2" fill="none"
+                stroke-linecap="round" />
+              <circle cx="14" cy="56" r="2" fill="#ffd700" />
+              <!-- Head Dome -->
+              <path d="M 44 26 C 46 16 58 16 62 25 C 64 29 64 34 58 36 Z" fill="url(#elephantGold)" />
+              <!-- Tilak -->
+              <circle cx="56" cy="24" r="2.2" fill="#e71d24" />
+              <circle cx="56" cy="24" r="3.2" stroke="#ffe066" stroke-width="0.8" fill="none" />
+              <!-- Tusk -->
+              <path d="M 54 37 C 59 39 65 39 69 35 C 65 37 59 37 54 39 Z" fill="#ffffff"
+                filter="drop-shadow(0 0 2px #fff)" />
+              <!-- Ear -->
+              <path d="M 46 22 C 38 22 36 32 38 42 C 40 46 45 46 48 38 C 50 32 49 24 46 22 Z" fill="#b88619"
+                stroke="#ffe066" stroke-width="1" />
+              <circle cx="43" cy="40" r="1.5" fill="#ffe066" />
+              <!-- Saddle (Jhool) -->
+              <path d="M 22 30 C 26 28 36 28 42 30 L 44 48 C 38 51 28 51 22 48 Z" fill="url(#elephantSaddle)"
+                stroke="#ffe066" stroke-width="1" />
+              <circle cx="25" cy="49" r="1.2" fill="#ffe066" />
+              <circle cx="33" cy="51" r="1.2" fill="#ffe066" />
+              <circle cx="41" cy="49" r="1.2" fill="#ffe066" />
+              <!-- Roaring Animated Trunk -->
+              <g class="elephant-trunk trunk-anim-right">
+                <path
+                  d="M 56 32 C 60 36 64 44 66 48 C 70 56 76 54 78 46 C 80 38 76 28 72 24 C 70 22 68 25 70 28 C 72 32 74 38 72 44 C 70 48 66 46 64 42 C 62 38 58 32 56 32 Z"
+                  fill="url(#elephantGold)" />
+                <circle cx="71" cy="24" r="1.8" fill="#ffe066" />
+              </g>
+            </svg>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Stage 3 View 2: Introduction Bride and Groom Section (Visible ONLY after scrolling down!) -->
+      <section id="coupleSection" class="couple-intro-section" aria-label="Introduction Bride and Groom">
+        <div class="section-badge-wrapper">
+          <span class="section-sub-badge">✦ SACRED MATRIMONY ✦</span>
+          <h3 class="section-couple-title">Introducing Groom and Bride</h3>
+        </div>
+
+        <!-- Identically Sized & Positioned Heart Card Stack with Z-Index Swipe Inversion -->
+        <div id="heartCardStack" class="heart-card-stack" role="button" tabindex="0" aria-label="Tap to swap shape and couple photo">
+          
+          <!-- Layer: Photo (Starts underneath at z-index: 1, inverts to z-index: 2 on tap) -->
+          <div id="layerImage" class="heart-stack-layer layer-image">
+            <svg viewBox="0 0 200 180" class="heart-svg-content" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <!-- Dark Obsidian Gold Background Behind Photo -->
+              <path d="M 100 45 C 55 -8 0 30 0 84 C 0 132 46 156 100 178 C 154 156 200 132 200 84 C 200 30 145 -8 100 45 Z" fill="#0c0802"/>
+              <!-- Clipped Real Couple Photograph -->
+              <g clip-path="url(#roundedHeartClip)">
+                <image href="CoupleImage.webp" xlink:href="CoupleImage.webp" x="0" y="0" width="200" height="180" preserveAspectRatio="xMidYMid slice" class="couple-real-photo" />
+              </g>
+              <!-- Outer Royal Gold Foil Rim -->
+              <path d="M 100 45 C 55 -8 0 30 0 84 C 0 132 46 156 100 178 C 154 156 200 132 200 84 C 200 30 145 -8 100 45 Z" 
+                    stroke="url(#heartGoldRim)" stroke-width="3.5" fill="none" filter="url(#heartRimGlow)"/>
+              <!-- Inner Delicate Gold Dashed Accent -->
+              <path d="M 100 48 C 58 0 6 34 6 84 C 6 128 48 150 100 171 C 152 150 194 128 194 84 C 194 34 142 0 100 48 Z" 
+                    stroke="rgba(255, 245, 180, 0.75)" stroke-width="1.2" stroke-dasharray="4 2.5" fill="none"/>
+            </svg>
+          </div>
+
+          <!-- Layer: Shape Card (Starts at top at z-index: 2, inverts to z-index: 1 on tap) -->
+          <div id="layerShape" class="heart-stack-layer layer-shape">
+            <svg viewBox="0 0 200 180" class="heart-svg-content" xmlns="http://www.w3.org/2000/svg">
+              <!-- Rounded Heart Luxury Obsidian-Gold Satin Surface -->
+              <path d="M 100 45 C 55 -8 0 30 0 84 C 0 132 46 156 100 178 C 154 156 200 132 200 84 C 200 30 145 -8 100 45 Z" 
+                    fill="url(#heartGoldSurface)"/>
+
+              <!-- Outer Royal Gold Foil Rim -->
+              <path d="M 100 45 C 55 -8 0 30 0 84 C 0 132 46 156 100 178 C 154 156 200 132 200 84 C 200 30 145 -8 100 45 Z" 
+                    stroke="url(#heartGoldRim)" stroke-width="3.5" fill="none" filter="url(#heartRimGlow)"/>
+
+              <!-- Inner Delicate Gold Dashed Filigree Accent -->
+              <path d="M 100 48 C 58 0 6 34 6 84 C 6 128 48 150 100 171 C 152 150 194 128 194 84 C 194 34 142 0 100 48 Z" 
+                    stroke="rgba(255, 245, 180, 0.75)" stroke-width="1.2" stroke-dasharray="4 2.5" fill="none"/>
+
+              <!-- Auspicious Vedic Tag (Comfortably spaced below cleft) -->
+              <text x="100" y="57" text-anchor="middle" dominant-baseline="central" fill="url(#heartGoldRim)" font-family="'Cormorant Garamond', Georgia, serif" font-size="8.5" font-weight="600" letter-spacing="1.5">॥ श्री गणेशाय नमः ॥</text>
+
+              <!-- Sacred Interlocking Royal Rings & Diamond Star Crest (Pure Royal Gold Theme, No Red) -->
+              <g transform="translate(100, 75)">
+                <!-- Left Golden Wedding Ring -->
+                <circle cx="-6.5" cy="0" r="9" fill="none" stroke="url(#heartGoldRim)" stroke-width="1.8" filter="url(#heartRimGlow)"/>
+                <!-- Right Golden Wedding Ring -->
+                <circle cx="6.5" cy="0" r="9" fill="none" stroke="url(#heartGoldRim)" stroke-width="1.8" filter="url(#heartRimGlow)"/>
+                <!-- Diamond Starburst Accent on Ring -->
+                <polygon points="0,-12 2.8,-8 6.5,-8 3.2,-5 4.5,0 0,-3 -4.5,0 -3.2,-5 -6.5,-8 -2.8,-8" fill="#ffffff" filter="drop-shadow(0 0 5px #ffd700)"/>
+                <circle cx="0" cy="-6" r="2" fill="#fffdf2"/>
+              </g>
+
+              <!-- Title: Groom & Bride (Mathematically Centered in Gold) -->
+              <text x="100" y="97" text-anchor="middle" dominant-baseline="central" fill="url(#heartGoldRim)" font-family="'Cinzel', serif" font-size="12.5" font-weight="700" letter-spacing="1.2">Groom &amp; Bride</text>
+
+              <!-- Tagline: A Sacred Bond of Eternal Love -->
+              <text x="100" y="111" text-anchor="middle" dominant-baseline="central" fill="#fae588" font-family="'Cormorant Garamond', Georgia, serif" font-size="8.2" font-style="italic" letter-spacing="0.5">A Sacred Bond of Eternal Love</text>
+
+              <!-- Interactive Royal Gold Swipe / Tap Indicator Button (Sleek Compact Micro-Pill, Zero Overlap) -->
+              <g transform="translate(100, 131)" class="svg-swipe-pill">
+                <rect x="-39" y="-8.5" width="78" height="17" rx="8.5" fill="url(#heartGoldButton)" stroke="#fffce8" stroke-width="0.8" filter="drop-shadow(0 2px 6px rgba(0,0,0,0.7))"/>
+                <g transform="translate(-27, 0)">
+                  <circle cx="0" cy="0" r="5" fill="#1b1203"/>
+                  <path d="M -1.8 -2 L 1.2 0 L -1.8 2" fill="none" stroke="#ffd700" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                </g>
+                <text x="5" y="0" text-anchor="middle" dominant-baseline="central" fill="#1b1203" font-family="'Cinzel', serif" font-size="5.6" font-weight="700" letter-spacing="0.7">SWIPE TO REVEAL</text>
+              </g>
+            </svg>
+          </div>
+
+        </div>
+
+        <!-- Revealed Names of Bride & Groom (Appears after card is swiped right) -->
+        <div id="coupleNamesRevealed" class="couple-names-revealed">
+          <h4 class="couple-hero-names">
+            <span class="groom-name-text">Chi. Narendra</span>
+            
+            <!-- Elegant Heart Divider -->
+            <span class="elegant-heart-divider" aria-label="Heart">
+              <svg viewBox="0 0 24 24" class="svg-heart-beating" fill="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+            </span>
+            
+            <span class="bride-name-text">Chi. La. Sow Roshini</span>
+          </h4>
+          <p class="couple-blessing-subtitle">United in Sacred Love &amp; Divine Matrimony</p>
+
+          <!-- Actions & Prompts -->
+          <div class="revealed-actions-row">
+            <button id="recoverCardBtn" class="recover-card-btn round-control-btn" title="Swap Card" aria-label="Swap photo and card">
+              <span class="recover-icon">↺</span>
+            </button>
+            <div class="scroll-to-venue-prompt" id="scrollToVenueBtn" role="button" tabindex="0" aria-label="Scroll to see more">
+              <span class="scroll-prompt-text">Scroll to see more</span>
+              <span class="scroll-prompt-chevron">▼</span>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Stage 3 View 3: Auspicious Date, Time & Venue Section (Corner-Only Borders, No Card Background) -->
+      <section id="eventDetailsSection" class="event-details-section" aria-label="Wedding Date, Time &amp; Venue">
+        
+        <!-- Section Header -->
+        <div class="section-badge-wrapper">
+          <div class="sacred-kalash-badge" aria-hidden="true">
+            <svg class="kalash-mini-svg" viewBox="0 0 40 40" fill="none">
+              <path d="M 20 6 Q 16 14 13 18 Q 11 26 20 34 Q 29 26 27 18 Q 24 14 20 6 Z" fill="url(#veinGoldGrad)" stroke="#ffd700" stroke-width="1"/>
+              <circle cx="20" cy="18" r="3.5" fill="#2d1604" stroke="#ffd700" stroke-width="0.8"/>
+              <path d="M 12 18 Q 20 15 28 18" stroke="#ffd700" stroke-width="1" fill="none"/>
+              <circle cx="20" cy="5" r="2.5" fill="#fae588"/>
+            </svg>
+          </div>
+          <span class="section-sub-badge">✦ SACRED WEDDING CEREMONY ✦</span>
+          <h3 class="section-couple-title">Date, Time &amp; Muhurtham</h3>
+          <div class="golden-accent-divider" aria-hidden="true">
+            <span class="accent-line"></span>
+            <span class="accent-sparkle">✦</span>
+            <span class="accent-line"></span>
+          </div>
+        </div>
+
+        <!-- Corner-Border Textboxes Container (Transparent, No Cards) -->
+        <div class="corner-textboxes-container">
+          
+          <!-- Box 1: Auspicious Muhurtham & Date -->
+          <div class="corner-frame-textbox" id="boxMuhurtham">
+            <!-- 4 Corner-Only Vein Borders -->
+            <span class="border-corner corner-tl" aria-hidden="true">
+              <svg viewBox="0 0 36 36" class="corner-bracket-svg">
+                <path d="M 2 34 L 2 7 Q 2 2 7 2 L 34 2" stroke="url(#veinGoldGrad)" stroke-width="2" fill="none" stroke-linecap="round"/>
+                <path d="M 6 26 L 6 9 Q 6 6 9 6 L 26 6" stroke="url(#veinGoldGrad)" stroke-width="1" fill="none" stroke-opacity="0.85"/>
+                <path d="M 6 6 Q 16 10 24 24" stroke="url(#veinGoldGrad)" stroke-width="1.2" fill="none"/>
+                <path d="M 12 12 Q 18 13 22 18" stroke="url(#veinGoldGrad)" stroke-width="0.9" fill="none"/>
+                <path d="M 14 8 Q 20 7 22 3" stroke="url(#veinGoldGrad)" stroke-width="1" fill="none"/>
+                <path d="M 8 14 Q 7 20 3 22" stroke="url(#veinGoldGrad)" stroke-width="1" fill="none"/>
+                <polygon points="6,2 7.5,5 10,6 7.5,7 6,10 4.5,7 2,6 4.5,5" fill="#ffffff" filter="drop-shadow(0 0 3px #ffd700)"/>
+                <circle cx="6" cy="6" r="1.5" fill="#ffd700"/>
+              </svg>
+            </span>
+            <span class="border-corner corner-tr" aria-hidden="true">
+              <svg viewBox="0 0 36 36" class="corner-bracket-svg" style="transform: scaleX(-1);">
+                <path d="M 2 34 L 2 7 Q 2 2 7 2 L 34 2" stroke="url(#veinGoldGrad)" stroke-width="2" fill="none" stroke-linecap="round"/>
+                <path d="M 6 26 L 6 9 Q 6 6 9 6 L 26 6" stroke="url(#veinGoldGrad)" stroke-width="1" fill="none" stroke-opacity="0.85"/>
+                <path d="M 6 6 Q 16 10 24 24" stroke="url(#veinGoldGrad)" stroke-width="1.2" fill="none"/>
+                <path d="M 12 12 Q 18 13 22 18" stroke="url(#veinGoldGrad)" stroke-width="0.9" fill="none"/>
+                <path d="M 14 8 Q 20 7 22 3" stroke="url(#veinGoldGrad)" stroke-width="1" fill="none"/>
+                <path d="M 8 14 Q 7 20 3 22" stroke="url(#veinGoldGrad)" stroke-width="1" fill="none"/>
+                <polygon points="6,2 7.5,5 10,6 7.5,7 6,10 4.5,7 2,6 4.5,5" fill="#ffffff" filter="drop-shadow(0 0 3px #ffd700)"/>
+                <circle cx="6" cy="6" r="1.5" fill="#ffd700"/>
+              </svg>
+            </span>
+            <span class="border-corner corner-bl" aria-hidden="true">
+              <svg viewBox="0 0 36 36" class="corner-bracket-svg" style="transform: scaleY(-1);">
+                <path d="M 2 34 L 2 7 Q 2 2 7 2 L 34 2" stroke="url(#veinGoldGrad)" stroke-width="2" fill="none" stroke-linecap="round"/>
+                <path d="M 6 26 L 6 9 Q 6 6 9 6 L 26 6" stroke="url(#veinGoldGrad)" stroke-width="1" fill="none" stroke-opacity="0.85"/>
+                <path d="M 6 6 Q 16 10 24 24" stroke="url(#veinGoldGrad)" stroke-width="1.2" fill="none"/>
+                <path d="M 12 12 Q 18 13 22 18" stroke="url(#veinGoldGrad)" stroke-width="0.9" fill="none"/>
+                <path d="M 14 8 Q 20 7 22 3" stroke="url(#veinGoldGrad)" stroke-width="1" fill="none"/>
+                <path d="M 8 14 Q 7 20 3 22" stroke="url(#veinGoldGrad)" stroke-width="1" fill="none"/>
+                <polygon points="6,2 7.5,5 10,6 7.5,7 6,10 4.5,7 2,6 4.5,5" fill="#ffffff" filter="drop-shadow(0 0 3px #ffd700)"/>
+                <circle cx="6" cy="6" r="1.5" fill="#ffd700"/>
+              </svg>
+            </span>
+            <span class="border-corner corner-br" aria-hidden="true">
+              <svg viewBox="0 0 36 36" class="corner-bracket-svg" style="transform: scale(-1);">
+                <path d="M 2 34 L 2 7 Q 2 2 7 2 L 34 2" stroke="url(#veinGoldGrad)" stroke-width="2" fill="none" stroke-linecap="round"/>
+                <path d="M 6 26 L 6 9 Q 6 6 9 6 L 26 6" stroke="url(#veinGoldGrad)" stroke-width="1" fill="none" stroke-opacity="0.85"/>
+                <path d="M 6 6 Q 16 10 24 24" stroke="url(#veinGoldGrad)" stroke-width="1.2" fill="none"/>
+                <path d="M 12 12 Q 18 13 22 18" stroke="url(#veinGoldGrad)" stroke-width="0.9" fill="none"/>
+                <path d="M 14 8 Q 20 7 22 3" stroke="url(#veinGoldGrad)" stroke-width="1" fill="none"/>
+                <path d="M 8 14 Q 7 20 3 22" stroke="url(#veinGoldGrad)" stroke-width="1" fill="none"/>
+                <polygon points="6,2 7.5,5 10,6 7.5,7 6,10 4.5,7 2,6 4.5,5" fill="#ffffff" filter="drop-shadow(0 0 3px #ffd700)"/>
+                <circle cx="6" cy="6" r="1.5" fill="#ffd700"/>
+              </svg>
+            </span>
+
+            <div class="textbox-content">
+              <div class="box-badge-tag">
+                <span class="box-badge-star">✦</span>
+                <span class="box-badge-title">AUSPICIOUS WEDDING MUHURTHAM</span>
+                <span class="box-badge-star">✦</span>
+              </div>
+              
+              <h4 class="detail-primary-title">26th November 2026</h4>
+              <div class="detail-time-wrapper">
+                <span class="time-prefix">Thursday Night at</span>
+                <span class="time-main">8:34 PM</span>
+              </div>
+              
+              <div class="subtle-gold-divider" aria-hidden="true">
+                <span class="divider-line"></span>
+                <span class="divider-symbol">❦</span>
+                <span class="divider-line"></span>
+              </div>
+
+              <p class="detail-sub-text">Mrugasira Nakshatra &bull; Midhuna Lagnam</p>
+              <p class="detail-english-blessing">"Consecrated under the auspicious cosmic alignment of Midhuna Lagna"</p>
+            </div>
+          </div>
+
+          <!-- Box 2: Dinner Reception -->
+          <div class="corner-frame-textbox" id="boxDinner">
+            <!-- 4 Corner-Only Vein Borders -->
+            <span class="border-corner corner-tl" aria-hidden="true">
+              <svg viewBox="0 0 36 36" class="corner-bracket-svg">
+                <path d="M 2 34 L 2 7 Q 2 2 7 2 L 34 2" stroke="url(#veinGoldGrad)" stroke-width="2" fill="none" stroke-linecap="round"/>
+                <path d="M 6 26 L 6 9 Q 6 6 9 6 L 26 6" stroke="url(#veinGoldGrad)" stroke-width="1" fill="none" stroke-opacity="0.85"/>
+                <path d="M 6 6 Q 16 10 24 24" stroke="url(#veinGoldGrad)" stroke-width="1.2" fill="none"/>
+                <path d="M 12 12 Q 18 13 22 18" stroke="url(#veinGoldGrad)" stroke-width="0.9" fill="none"/>
+                <path d="M 14 8 Q 20 7 22 3" stroke="url(#veinGoldGrad)" stroke-width="1" fill="none"/>
+                <path d="M 8 14 Q 7 20 3 22" stroke="url(#veinGoldGrad)" stroke-width="1" fill="none"/>
+                <polygon points="6,2 7.5,5 10,6 7.5,7 6,10 4.5,7 2,6 4.5,5" fill="#ffffff" filter="drop-shadow(0 0 3px #ffd700)"/>
+                <circle cx="6" cy="6" r="1.5" fill="#ffd700"/>
+              </svg>
+            </span>
+            <span class="border-corner corner-tr" aria-hidden="true">
+              <svg viewBox="0 0 36 36" class="corner-bracket-svg" style="transform: scaleX(-1);">
+                <path d="M 2 34 L 2 7 Q 2 2 7 2 L 34 2" stroke="url(#veinGoldGrad)" stroke-width="2" fill="none" stroke-linecap="round"/>
+                <path d="M 6 26 L 6 9 Q 6 6 9 6 L 26 6" stroke="url(#veinGoldGrad)" stroke-width="1" fill="none" stroke-opacity="0.85"/>
+                <path d="M 6 6 Q 16 10 24 24" stroke="url(#veinGoldGrad)" stroke-width="1.2" fill="none"/>
+                <path d="M 12 12 Q 18 13 22 18" stroke="url(#veinGoldGrad)" stroke-width="0.9" fill="none"/>
+                <path d="M 14 8 Q 20 7 22 3" stroke="url(#veinGoldGrad)" stroke-width="1" fill="none"/>
+                <path d="M 8 14 Q 7 20 3 22" stroke="url(#veinGoldGrad)" stroke-width="1" fill="none"/>
+                <polygon points="6,2 7.5,5 10,6 7.5,7 6,10 4.5,7 2,6 4.5,5" fill="#ffffff" filter="drop-shadow(0 0 3px #ffd700)"/>
+                <circle cx="6" cy="6" r="1.5" fill="#ffd700"/>
+              </svg>
+            </span>
+            <span class="border-corner corner-bl" aria-hidden="true">
+              <svg viewBox="0 0 36 36" class="corner-bracket-svg" style="transform: scaleY(-1);">
+                <path d="M 2 34 L 2 7 Q 2 2 7 2 L 34 2" stroke="url(#veinGoldGrad)" stroke-width="2" fill="none" stroke-linecap="round"/>
+                <path d="M 6 26 L 6 9 Q 6 6 9 6 L 26 6" stroke="url(#veinGoldGrad)" stroke-width="1" fill="none" stroke-opacity="0.85"/>
+                <path d="M 6 6 Q 16 10 24 24" stroke="url(#veinGoldGrad)" stroke-width="1.2" fill="none"/>
+                <path d="M 12 12 Q 18 13 22 18" stroke="url(#veinGoldGrad)" stroke-width="0.9" fill="none"/>
+                <path d="M 14 8 Q 20 7 22 3" stroke="url(#veinGoldGrad)" stroke-width="1" fill="none"/>
+                <path d="M 8 14 Q 7 20 3 22" stroke="url(#veinGoldGrad)" stroke-width="1" fill="none"/>
+                <polygon points="6,2 7.5,5 10,6 7.5,7 6,10 4.5,7 2,6 4.5,5" fill="#ffffff" filter="drop-shadow(0 0 3px #ffd700)"/>
+                <circle cx="6" cy="6" r="1.5" fill="#ffd700"/>
+              </svg>
+            </span>
+            <span class="border-corner corner-br" aria-hidden="true">
+              <svg viewBox="0 0 36 36" class="corner-bracket-svg" style="transform: scale(-1);">
+                <path d="M 2 34 L 2 7 Q 2 2 7 2 L 34 2" stroke="url(#veinGoldGrad)" stroke-width="2" fill="none" stroke-linecap="round"/>
+                <path d="M 6 26 L 6 9 Q 6 6 9 6 L 26 6" stroke="url(#veinGoldGrad)" stroke-width="1" fill="none" stroke-opacity="0.85"/>
+                <path d="M 6 6 Q 16 10 24 24" stroke="url(#veinGoldGrad)" stroke-width="1.2" fill="none"/>
+                <path d="M 12 12 Q 18 13 22 18" stroke="url(#veinGoldGrad)" stroke-width="0.9" fill="none"/>
+                <path d="M 14 8 Q 20 7 22 3" stroke="url(#veinGoldGrad)" stroke-width="1" fill="none"/>
+                <path d="M 8 14 Q 7 20 3 22" stroke="url(#veinGoldGrad)" stroke-width="1" fill="none"/>
+                <polygon points="6,2 7.5,5 10,6 7.5,7 6,10 4.5,7 2,6 4.5,5" fill="#ffffff" filter="drop-shadow(0 0 3px #ffd700)"/>
+                <circle cx="6" cy="6" r="1.5" fill="#ffd700"/>
+              </svg>
+            </span>
+
+            <div class="textbox-content">
+              <div class="box-badge-tag">
+                <span class="box-badge-star">✦</span>
+                <span class="box-badge-title">GRAND DINNER RECEPTION</span>
+                <span class="box-badge-star">✦</span>
+              </div>
+              
+              <h4 class="detail-primary-title">Followed by Dinner</h4>
+              <div class="detail-time-wrapper">
+                <span class="time-prefix">Welcoming Guests from</span>
+                <span class="time-main">7:00 PM</span>
+                <span class="time-suffix">Onwards</span>
+              </div>
+              
+              <div class="subtle-gold-divider" aria-hidden="true">
+                <span class="divider-line"></span>
+                <span class="divider-symbol">❦</span>
+                <span class="divider-line"></span>
+              </div>
+
+              <p class="detail-english-blessing">"Cordially invited to grace the celebration and join us for the celebratory dinner feast."</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Scroll Prompt to Venue Section -->
+        <div class="scroll-to-venue-prompt" id="scrollToVenueSectionBtn" role="button" tabindex="0" aria-label="Scroll to Wedding Venue">
+          <span class="scroll-prompt-text">Scroll to Venue &amp; Map</span>
+          <span class="scroll-prompt-chevron">▼</span>
+        </div>
+
+      </section>
+
+      <!-- Stage 3 View 4: Sacred Wedding Venue & Map Preview Section -->
+      <section id="venueSection" class="venue-section" aria-label="Wedding Venue &amp; Location">
+        
+        <!-- Section Header -->
+        <div class="section-badge-wrapper">
+          <div class="sacred-kalash-badge" aria-hidden="true">
+            <svg class="kalash-mini-svg" viewBox="0 0 40 40" fill="none">
+              <path d="M 20 6 Q 16 14 13 18 Q 11 26 20 34 Q 29 26 27 18 Q 24 14 20 6 Z" fill="url(#veinGoldGrad)" stroke="#ffd700" stroke-width="1"/>
+              <circle cx="20" cy="18" r="3.5" fill="#2d1604" stroke="#ffd700" stroke-width="0.8"/>
+              <path d="M 12 18 Q 20 15 28 18" stroke="#ffd700" stroke-width="1" fill="none"/>
+              <circle cx="20" cy="5" r="2.5" fill="#fae588"/>
+            </svg>
+          </div>
+          <span class="section-sub-badge">✦ SACRED CELEBRATION VENUE ✦</span>
+          <h3 class="section-couple-title">Wedding Venue &amp; Location</h3>
+          <div class="golden-accent-divider" aria-hidden="true">
+            <span class="accent-line"></span>
+            <span class="accent-sparkle">✦</span>
+            <span class="accent-line"></span>
+          </div>
+        </div>
+
+        <!-- Venue Details Textbox (Corner-Only Vein Borders, No Card Background) -->
+        <div class="corner-textboxes-container">
+          <div class="corner-frame-textbox" id="boxVenueDetails">
+            <!-- 4 Corner-Only Vein Borders -->
+            <span class="border-corner corner-tl" aria-hidden="true">
+              <svg viewBox="0 0 36 36" class="corner-bracket-svg">
+                <path d="M 2 34 L 2 7 Q 2 2 7 2 L 34 2" stroke="url(#veinGoldGrad)" stroke-width="2" fill="none" stroke-linecap="round"/>
+                <path d="M 6 26 L 6 9 Q 6 6 9 6 L 26 6" stroke="url(#veinGoldGrad)" stroke-width="1" fill="none" stroke-opacity="0.85"/>
+                <path d="M 6 6 Q 16 10 24 24" stroke="url(#veinGoldGrad)" stroke-width="1.2" fill="none"/>
+                <path d="M 12 12 Q 18 13 22 18" stroke="url(#veinGoldGrad)" stroke-width="0.9" fill="none"/>
+                <path d="M 14 8 Q 20 7 22 3" stroke="url(#veinGoldGrad)" stroke-width="1" fill="none"/>
+                <path d="M 8 14 Q 7 20 3 22" stroke="url(#veinGoldGrad)" stroke-width="1" fill="none"/>
+                <polygon points="6,2 7.5,5 10,6 7.5,7 6,10 4.5,7 2,6 4.5,5" fill="#ffffff" filter="drop-shadow(0 0 3px #ffd700)"/>
+                <circle cx="6" cy="6" r="1.5" fill="#ffd700"/>
+              </svg>
+            </span>
+            <span class="border-corner corner-tr" aria-hidden="true">
+              <svg viewBox="0 0 36 36" class="corner-bracket-svg" style="transform: scaleX(-1);">
+                <path d="M 2 34 L 2 7 Q 2 2 7 2 L 34 2" stroke="url(#veinGoldGrad)" stroke-width="2" fill="none" stroke-linecap="round"/>
+                <path d="M 6 26 L 6 9 Q 6 6 9 6 L 26 6" stroke="url(#veinGoldGrad)" stroke-width="1" fill="none" stroke-opacity="0.85"/>
+                <path d="M 6 6 Q 16 10 24 24" stroke="url(#veinGoldGrad)" stroke-width="1.2" fill="none"/>
+                <path d="M 12 12 Q 18 13 22 18" stroke="url(#veinGoldGrad)" stroke-width="0.9" fill="none"/>
+                <path d="M 14 8 Q 20 7 22 3" stroke="url(#veinGoldGrad)" stroke-width="1" fill="none"/>
+                <path d="M 8 14 Q 7 20 3 22" stroke="url(#veinGoldGrad)" stroke-width="1" fill="none"/>
+                <polygon points="6,2 7.5,5 10,6 7.5,7 6,10 4.5,7 2,6 4.5,5" fill="#ffffff" filter="drop-shadow(0 0 3px #ffd700)"/>
+                <circle cx="6" cy="6" r="1.5" fill="#ffd700"/>
+              </svg>
+            </span>
+            <span class="border-corner corner-bl" aria-hidden="true">
+              <svg viewBox="0 0 36 36" class="corner-bracket-svg" style="transform: scaleY(-1);">
+                <path d="M 2 34 L 2 7 Q 2 2 7 2 L 34 2" stroke="url(#veinGoldGrad)" stroke-width="2" fill="none" stroke-linecap="round"/>
+                <path d="M 6 26 L 6 9 Q 6 6 9 6 L 26 6" stroke="url(#veinGoldGrad)" stroke-width="1" fill="none" stroke-opacity="0.85"/>
+                <path d="M 6 6 Q 16 10 24 24" stroke="url(#veinGoldGrad)" stroke-width="1.2" fill="none"/>
+                <path d="M 12 12 Q 18 13 22 18" stroke="url(#veinGoldGrad)" stroke-width="0.9" fill="none"/>
+                <path d="M 14 8 Q 20 7 22 3" stroke="url(#veinGoldGrad)" stroke-width="1" fill="none"/>
+                <path d="M 8 14 Q 7 20 3 22" stroke="url(#veinGoldGrad)" stroke-width="1" fill="none"/>
+                <polygon points="6,2 7.5,5 10,6 7.5,7 6,10 4.5,7 2,6 4.5,5" fill="#ffffff" filter="drop-shadow(0 0 3px #ffd700)"/>
+                <circle cx="6" cy="6" r="1.5" fill="#ffd700"/>
+              </svg>
+            </span>
+            <span class="border-corner corner-br" aria-hidden="true">
+              <svg viewBox="0 0 36 36" class="corner-bracket-svg" style="transform: scale(-1);">
+                <path d="M 2 34 L 2 7 Q 2 2 7 2 L 34 2" stroke="url(#veinGoldGrad)" stroke-width="2" fill="none" stroke-linecap="round"/>
+                <path d="M 6 26 L 6 9 Q 6 6 9 6 L 26 6" stroke="url(#veinGoldGrad)" stroke-width="1" fill="none" stroke-opacity="0.85"/>
+                <path d="M 6 6 Q 16 10 24 24" stroke="url(#veinGoldGrad)" stroke-width="1.2" fill="none"/>
+                <path d="M 12 12 Q 18 13 22 18" stroke="url(#veinGoldGrad)" stroke-width="0.9" fill="none"/>
+                <path d="M 14 8 Q 20 7 22 3" stroke="url(#veinGoldGrad)" stroke-width="1" fill="none"/>
+                <path d="M 8 14 Q 7 20 3 22" stroke="url(#veinGoldGrad)" stroke-width="1" fill="none"/>
+                <polygon points="6,2 7.5,5 10,6 7.5,7 6,10 4.5,7 2,6 4.5,5" fill="#ffffff" filter="drop-shadow(0 0 3px #ffd700)"/>
+                <circle cx="6" cy="6" r="1.5" fill="#ffd700"/>
+              </svg>
+            </span>
+
+            <div class="textbox-content">
+              <div class="box-badge-tag">
+                <span class="box-badge-star">✦</span>
+                <span class="box-badge-title">KALYANA MANDAPAM</span>
+                <span class="box-badge-star">✦</span>
+              </div>
+              
+              <h4 class="detail-primary-title venue-highlight-name">KJA Auditorium Function Hall</h4>
+              <p class="detail-venue-sub">Grand Kalyana Mandapam &bull; Convention Center</p>
+              
+              <div class="subtle-gold-divider" aria-hidden="true">
+                <span class="divider-line"></span>
+                <span class="divider-symbol">❦</span>
+                <span class="divider-line"></span>
+              </div>
+
+              <p class="detail-english-blessing">"We cordially invite you to grace the venue and bless the joyous occasion."</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Google Maps Live Preview Card -->
+        <div class="venue-map-card">
+          <div class="map-card-header">
+            <div class="map-pin-indicator">
+              <span class="map-live-dot" aria-hidden="true"></span>
+              <span class="map-location-tag">KJA Auditorium Function Hall</span>
+            </div>
+            <a href="https://maps.app.goo.gl/eTsYwvjMc3pbde8u7?g_st=aw" target="_blank" rel="noopener noreferrer" class="map-direct-link-pill" title="Open in Google Maps">
+              <span>Open Map</span> ↗
+            </a>
+          </div>
+
+          <div class="map-iframe-container">
+            <iframe
+              class="map-preview-iframe"
+              src="https://maps.google.com/maps?q=KJA+Auditorium+Function+Hall&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              width="100%"
+              height="230"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Google Maps Location Preview of KJA Auditorium Function Hall">
+            </iframe>
+          </div>
+
+          <div class="map-card-footer">
+            <a href="https://maps.app.goo.gl/eTsYwvjMc3pbde8u7?g_st=aw" target="_blank" rel="noopener noreferrer" class="corner-shine-map-btn venue-maps-cta-btn" aria-label="Open KJA Auditorium Function Hall on Google Maps">
+              <svg class="map-btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+              </svg>
+              <span>Get Directions on Google Maps ↗</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Traditional Blessings Footer at the conclusion of the invitation -->
+        <div class="event-blessing-footer">
+          <p class="blessing-footer-text">
+            "Your esteemed presence, prayers, and heartfelt blessings are cordially solicited to grace this sacred union."
+          </p>
+          <div class="inviter-signature">
+            <span class="signature-family">&mdash; Smt. Umadevi &amp; Sri Mamidi Appalaraju &mdash;</span>
+          </div>
+        </div>
+
+      </section>
+
+    </div> <!-- End Final Screen -->
+
+    <!-- Small Round Music Toggle Button at Bottom of Website -->
+    <button id="finalSoundBtn" class="website-bottom-sound-btn round-control-btn" title="Toggle Music" aria-label="Toggle Music">
+      <svg id="finalIconSoundOn" class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" />
+      </svg>
+      <svg id="finalIconSoundOff" class="icon-svg hidden" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z" />
+      </svg>
+    </button>
+
+  </div> <!-- End Mobile Viewport -->
+
+  <!-- Hidden canvas for last frame extraction fallback -->
+  <canvas id="frameCanvas" style="display: none;"></canvas>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

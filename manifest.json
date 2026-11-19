@@ -1,0 +1,10 @@
+{
+  "name": "Mamidi's Wedding Invite",
+  "short_name": "Mamidi Wedding",
+  "description": "Royal Hindu Wedding Invitation for Chi. Narendra & Chi. La. Sow Roshini",
+  "start_url": "./index.html",
+  "display": "fullscreen",
+  "orientation": "portrait",
+  "background_color": "#080404",
+  "theme_color": "#080404"
+}
