@@ -24,6 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const finalSoundBtn = document.getElementById('finalSoundBtn');
   const finalIconSoundOn = document.getElementById('finalIconSoundOn');
   const finalIconSoundOff = document.getElementById('finalIconSoundOff');
+  const videoRestartBtn = document.getElementById('videoRestartBtn');
+  const restartSiteBtn = document.getElementById('restartSiteBtn');
   const progressBar = document.getElementById('progressBar');
   const playIndicator = document.getElementById('playIndicator');
   const frameCanvas = document.getElementById('frameCanvas');
@@ -31,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let isPlaying = false;
   let videoFinished = false;
+  let resetHeartCardStack = null;
 
   // ---------------------------------------------------------------------------
   // 1. Initial State Setup: Display First Frame as Background
@@ -327,6 +330,71 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ---------------------------------------------------------------------------
+  // 6b. Restart Website from Beginning Functionality
+  // ---------------------------------------------------------------------------
+  function restartWholeWebsite(e) {
+    if (e) e.stopPropagation();
+
+    // Pause videos and audio
+    mainVideo.pause();
+    bgVideo.pause();
+    mainVideo.currentTime = 0.01;
+    bgVideo.currentTime = 0.01;
+
+    if (bgMusic) {
+      bgMusic.pause();
+      bgMusic.currentTime = 0;
+    }
+
+    // Reset state flags
+    isPlaying = false;
+    videoFinished = false;
+    completionFired = false;
+
+    // Reset progress bar
+    if (progressBar) {
+      progressBar.style.width = '0%';
+    }
+
+    // Reset ambient background mode back to initial
+    const ambientContainer = document.getElementById('ambientContainer');
+    if (ambientContainer) {
+      ambientContainer.classList.remove('completion-mode');
+    }
+    if (endFrameBackdrop) {
+      endFrameBackdrop.classList.remove('visible');
+    }
+
+    // Reset screen transitions: return to Tap to Begin
+    finalScreen.classList.remove('active');
+    videoScreen.classList.remove('active');
+    tapScreen.classList.add('active');
+
+    // Scroll website back to top
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    if (finalScreen) finalScreen.scrollTop = 0;
+    const mobileViewport = document.querySelector('.mobile-viewport');
+    if (mobileViewport) mobileViewport.scrollTop = 0;
+
+    // Reset heart card stack if inverted
+    if (typeof resetHeartCardStack === 'function') {
+      resetHeartCardStack();
+    }
+
+    // Keep sound icons properly synchronized
+    if (bgMusic) {
+      updateSoundIcons(bgMusic.muted);
+    }
+  }
+
+  if (videoRestartBtn) {
+    videoRestartBtn.addEventListener('click', restartWholeWebsite);
+  }
+  if (restartSiteBtn) {
+    restartSiteBtn.addEventListener('click', restartWholeWebsite);
+  }
+
+  // ---------------------------------------------------------------------------
   // 7. Video Controls: Sound Toggle & Skip (Screen tap disabled during playback)
   // ---------------------------------------------------------------------------
   function updateSoundIcons(isMuted) {
@@ -607,6 +675,25 @@ document.addEventListener('DOMContentLoaded', () => {
     let startX = 0;
     let startY = 0;
     let currentDragX = 0;
+
+    resetHeartCardStack = function() {
+      isInverted = false;
+      isAnimating = false;
+      isDragging = false;
+      currentDragX = 0;
+      heartCardStack.classList.remove('is-inverted');
+      layerShape.style.transition = '';
+      layerShape.style.transform = '';
+      layerShape.style.opacity = '1';
+      layerShape.style.zIndex = '2';
+      layerImage.style.transition = '';
+      layerImage.style.transform = '';
+      layerImage.style.opacity = '1';
+      layerImage.style.zIndex = '1';
+      if (coupleNamesRevealed) {
+        coupleNamesRevealed.classList.remove('is-revealed');
+      }
+    };
 
     function invertLayers(direction = 'right') {
       if (isAnimating) return;

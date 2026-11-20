@@ -16,11 +16,11 @@
   <meta name="apple-mobile-web-app-title" content="Mamidi's Wedding Invite">
   <link rel="manifest" href="manifest.json">
 
-  <!-- Google Fonts: Cinzel, Cinzel Decorative, Cormorant Garamond, Great Vibes, & Montserrat -->
+  <!-- Google Fonts: Cinzel, Cinzel Decorative, Cormorant Garamond, Great Vibes, Montserrat & Noto Sans Telugu -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;500;600;700;800;900&family=Cinzel+Decorative:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;500;600;700;800;900&family=Cinzel+Decorative:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&family=Noto+Sans+Telugu:wght@400;500;600;700;800&display=swap"
     rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
@@ -471,16 +471,23 @@
 
       <!-- Bottom Controls Bar during Video Playback (Small Round Buttons with Symbols Only) -->
       <div class="video-bottom-controls-bar">
-        <button id="soundToggleBtn" class="round-control-btn" title="Toggle Music" aria-label="Toggle Music">
-          <svg id="iconSoundOn" class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
-            <path
-              d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" />
-          </svg>
-          <svg id="iconSoundOff" class="icon-svg hidden" viewBox="0 0 24 24" fill="currentColor">
-            <path
-              d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z" />
-          </svg>
-        </button>
+        <div class="video-bottom-left-controls">
+          <button id="videoRestartBtn" class="round-control-btn" title="Restart Website from Beginning" aria-label="Restart Website from Beginning">
+            <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/>
+            </svg>
+          </button>
+          <button id="soundToggleBtn" class="round-control-btn" title="Toggle Music" aria-label="Toggle Music">
+            <svg id="iconSoundOn" class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" />
+            </svg>
+            <svg id="iconSoundOff" class="icon-svg hidden" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z" />
+            </svg>
+          </button>
+        </div>
 
         <button id="skipToDetailsBtn" class="round-control-btn skip-details-btn" title="Skip to Wedding Details" aria-label="Skip to Wedding Details">
           <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
@@ -530,16 +537,52 @@
         </defs>
       </svg>
 
-      <!-- Seamlessly Blended Glassmorphic Nav Bar (With Om on both sides) -->
+      <!-- Seamlessly Blended Glassmorphic Nav Bar (With Swastiks on both sides) -->
       <nav class="theme-nav-bar">
         <div class="nav-container">
           <div class="nav-title-wrapper">
-            <span class="nav-om nav-om-left" aria-hidden="true">ॐ</span>
+            <span class="nav-swastik nav-swastik-left" aria-label="Swastik">
+              <svg viewBox="0 0 24 24" class="swastik-svg" aria-hidden="true">
+                <defs>
+                  <linearGradient id="swastikGoldLeft" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#3b1604"/>
+                    <stop offset="35%" stop-color="#7a380a"/>
+                    <stop offset="65%" stop-color="#d4a017"/>
+                    <stop offset="85%" stop-color="#ffd700"/>
+                    <stop offset="100%" stop-color="#3b1604"/>
+                  </linearGradient>
+                </defs>
+                <path d="M 19 5 L 12 5 L 12 19 L 5 19" fill="none" stroke="url(#swastikGoldLeft)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M 19 19 L 19 12 L 5 12 L 5 5" fill="none" stroke="url(#swastikGoldLeft)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="15.5" cy="8.5" r="1.1" fill="url(#swastikGoldLeft)"/>
+                <circle cx="15.5" cy="15.5" r="1.1" fill="url(#swastikGoldLeft)"/>
+                <circle cx="8.5" cy="15.5" r="1.1" fill="url(#swastikGoldLeft)"/>
+                <circle cx="8.5" cy="8.5" r="1.1" fill="url(#swastikGoldLeft)"/>
+              </svg>
+            </span>
             <h1 class="nav-title">
               <span class="nav-title-main">Mamidi's Wedding</span>
               <span class="nav-title-sub">Invite</span>
             </h1>
-            <span class="nav-om nav-om-right" aria-hidden="true">ॐ</span>
+            <span class="nav-swastik nav-swastik-right" aria-label="Swastik">
+              <svg viewBox="0 0 24 24" class="swastik-svg" aria-hidden="true">
+                <defs>
+                  <linearGradient id="swastikGoldRight" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#3b1604"/>
+                    <stop offset="35%" stop-color="#7a380a"/>
+                    <stop offset="65%" stop-color="#d4a017"/>
+                    <stop offset="85%" stop-color="#ffd700"/>
+                    <stop offset="100%" stop-color="#3b1604"/>
+                  </linearGradient>
+                </defs>
+                <path d="M 19 5 L 12 5 L 12 19 L 5 19" fill="none" stroke="url(#swastikGoldRight)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M 19 19 L 19 12 L 5 12 L 5 5" fill="none" stroke="url(#swastikGoldRight)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="15.5" cy="8.5" r="1.1" fill="url(#swastikGoldRight)"/>
+                <circle cx="15.5" cy="15.5" r="1.1" fill="url(#swastikGoldRight)"/>
+                <circle cx="8.5" cy="15.5" r="1.1" fill="url(#swastikGoldRight)"/>
+                <circle cx="8.5" cy="8.5" r="1.1" fill="url(#swastikGoldRight)"/>
+              </svg>
+            </span>
           </div>
         </div>
       </nav>
@@ -550,7 +593,7 @@
         <!-- Subtle Auspicious Marriage Sloka (Single Small Elegant Line Below Nav Bar, No Background) -->
         <div class="sloka-single-line-wrapper" aria-label="Auspicious Marriage Sloka">
           <p class="sloka-single-line">
-            ॥ माङ्गल्यं तन्तुनानेन मम जीवन हेतुना कण्ठे बध्नामि शुभगे सञ्जीव शरदः शतम् ॥
+            ॥ శ్రీరస్తు • శుభమస్తు • కల్యాణమస్తు ॥
           </p>
         </div>
 
@@ -757,7 +800,7 @@
                     stroke="rgba(255, 245, 180, 0.75)" stroke-width="1.2" stroke-dasharray="4 2.5" fill="none"/>
 
               <!-- Auspicious Vedic Tag (Comfortably spaced below cleft) -->
-              <text x="100" y="57" text-anchor="middle" dominant-baseline="central" fill="url(#heartGoldRim)" font-family="'Cormorant Garamond', Georgia, serif" font-size="8.5" font-weight="600" letter-spacing="1.5">॥ श्री गणेशाय नमः ॥</text>
+              <text x="100" y="57" text-anchor="middle" dominant-baseline="central" fill="url(#heartGoldRim)" font-family="'Noto Sans Telugu', 'Gautami', 'Nirmala UI', sans-serif" font-size="8" font-weight="700" letter-spacing="0.8">॥ శ్రీ గణేశాయ నమః ॥</text>
 
               <!-- Sacred Interlocking Royal Rings & Diamond Star Crest (Pure Royal Gold Theme, No Red) -->
               <g transform="translate(100, 75)">
@@ -1153,7 +1196,14 @@
 
     </div> <!-- End Final Screen -->
 
-    <!-- Small Round Music Toggle Button at Bottom of Website -->
+    <!-- Small Round Restart Button at Bottom Left of Website -->
+    <button id="restartSiteBtn" class="website-bottom-restart-btn round-control-btn" title="Restart Website from Beginning" aria-label="Restart Website from Beginning">
+      <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/>
+      </svg>
+    </button>
+
+    <!-- Small Round Music Toggle Button at Bottom Right of Website -->
     <button id="finalSoundBtn" class="website-bottom-sound-btn round-control-btn" title="Toggle Music" aria-label="Toggle Music">
       <svg id="finalIconSoundOn" class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
         <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" />
