@@ -24,7 +24,9 @@
   --text-primary: #ffffff;
   --text-ivory: #fff9ed;
   --text-muted: rgba(255, 249, 237, 0.82);
-  --navbar-height: clamp(72px, 9.5vh, 82px);
+  --navbar-base-height: clamp(72px, 9.5vh, 82px);
+  --navbar-pt: 0px;
+  --navbar-height: var(--navbar-base-height);
 
   /* Typography */
   --font-royal: 'Cinzel Decorative', 'Cinzel', serif;
@@ -810,6 +812,28 @@ body {
   max-width: 190px;
 }
 
+/* ==========================================================================
+   Fullscreen Adaptations: Mobile Notch & Cutout Safe Clearance
+   When website enters fullscreen, safely extend navbar height and pad down
+   so the navbar text and swastiks remain 100% visible and clear of mobile notch.
+   In non-fullscreen mode, normal compact navbar dimensions are strictly preserved.
+   ========================================================================== */
+:fullscreen {
+  --navbar-pt: max(env(safe-area-inset-top, 0px), clamp(32px, 4.8vh, 44px));
+  --navbar-height: calc(var(--navbar-base-height) + var(--navbar-pt));
+}
+
+:-webkit-full-screen {
+  --navbar-pt: max(env(safe-area-inset-top, 0px), clamp(32px, 4.8vh, 44px));
+  --navbar-height: calc(var(--navbar-base-height) + var(--navbar-pt));
+}
+
+html.is-fullscreen,
+body.is-fullscreen {
+  --navbar-pt: max(env(safe-area-inset-top, 0px), clamp(32px, 4.8vh, 44px));
+  --navbar-height: calc(var(--navbar-base-height) + var(--navbar-pt));
+}
+
 /* 
    EXACT USER REQUIREMENT:
    "only mamidi's marriage should be on the navbar and remove everything else"
@@ -823,6 +847,8 @@ body {
   width: 100%;
   height: var(--navbar-height);
   min-height: var(--navbar-height);
+  padding-top: var(--navbar-pt, 0px);
+  box-sizing: border-box;
   z-index: 100;
   background: linear-gradient(
     180deg,
@@ -839,6 +865,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: height 0.35s ease, min-height 0.35s ease, padding-top 0.35s ease;
 }
 
 .nav-container {

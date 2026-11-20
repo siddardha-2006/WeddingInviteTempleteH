@@ -82,7 +82,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     docEl.msRequestFullscreen;
       if (reqFs && !document.fullscreenElement && !document.webkitFullscreenElement) {
         const p = reqFs.call(docEl);
-        if (p && p.catch) p.catch(() => {});
+        if (p && p.then) {
+          p.then(() => updateFullscreenClasses()).catch(() => {});
+        } else {
+          setTimeout(updateFullscreenClasses, 120);
+        }
       }
     } catch (fsErr) {
       // Continue smoothly if fullscreen is restricted
@@ -126,6 +130,30 @@ document.addEventListener('DOMContentLoaded', () => {
   tapScreen.addEventListener('click', () => {
     startExperience();
   });
+
+  // ---------------------------------------------------------------------------
+  // 2b. Fullscreen State Synchronization (Mobile Notch & Cutout Safe Clearance)
+  // ---------------------------------------------------------------------------
+  function updateFullscreenClasses() {
+    const isFs = Boolean(
+      document.fullscreenElement ||
+      document.webkitFullscreenElement ||
+      document.mozFullScreenElement ||
+      document.msFullscreenElement
+    );
+    if (isFs) {
+      document.documentElement.classList.add('is-fullscreen');
+      document.body.classList.add('is-fullscreen');
+    } else {
+      document.documentElement.classList.remove('is-fullscreen');
+      document.body.classList.remove('is-fullscreen');
+    }
+  }
+
+  document.addEventListener('fullscreenchange', updateFullscreenClasses);
+  document.addEventListener('webkitfullscreenchange', updateFullscreenClasses);
+  document.addEventListener('mozfullscreenchange', updateFullscreenClasses);
+  document.addEventListener('MSFullscreenChange', updateFullscreenClasses);
 
   // ---------------------------------------------------------------------------
   // 3. Video Progress & Synchronization
@@ -385,6 +413,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (bgMusic) {
       updateSoundIcons(bgMusic.muted);
     }
+
+    // Keep fullscreen classes in sync
+    updateFullscreenClasses();
   }
 
   if (videoRestartBtn) {
